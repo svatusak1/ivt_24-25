@@ -1,5 +1,3 @@
-import time
-
 def binarni_deleni(seznam: list[int], cislo: int) -> int | None:
     right = len(seznam)
     left = 0 
@@ -15,9 +13,5 @@ def binarni_deleni(seznam: list[int], cislo: int) -> int | None:
 
     return None
 
-start = time.perf_counter_ns()
-
-res = binarni_deleni([1,4, 5, 14, 66, 77, 90], 14)
-
-print('it took: ', (time.perf_counter_ns() - start), 'nanosecons')
+print(binarni_deleni([1,4, 5, 14, 66, 77, 90], 14))
 
