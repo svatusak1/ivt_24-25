@@ -4,7 +4,7 @@ def binarni_deleni(seznam: list[int], cislo: int) -> int | None:
     right = len(seznam)
     left = 0 
     
-    while not (right - left == 0 or right - left == 1):
+    while right - left > 1:
         half = round((right-left)/2)
         if seznam[left+half] > cislo:
             right = half

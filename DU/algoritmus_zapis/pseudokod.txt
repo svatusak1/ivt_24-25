@@ -1,0 +1,16 @@
+def binarni_puleni(seznam, cislo):
+    pravy_palec = delka seznamu
+    levy_palec = 0
+
+    dokud pravy_palec - levy_palec > 1:
+        když seznam[pravy_palec-levy_palec] > cislo
+            pravy_palec = pravy_palec-levy_palec
+
+        jinak když seznam[pravy_palec-levy_palec] < cislo
+            levy_palec = pravy_palec-levy_palec
+
+        jinak 
+            vrat pravy_palec-levy_palec
+
+    vrat "seznam neobsahuje cislo"
+
