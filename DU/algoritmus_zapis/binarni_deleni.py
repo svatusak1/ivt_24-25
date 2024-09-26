@@ -2,8 +2,6 @@ import time
 
 def binarni_deleni(seznam: list[int], cislo: int) -> int | None:
     right = len(seznam)
-    if right == 0:
-        return None
     left = 0 
     half = round((right-left)/2)
 
