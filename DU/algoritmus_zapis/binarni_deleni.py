@@ -1,17 +1,27 @@
+import time
+
+
 def binarni_deleni(seznam: list[int], cislo: int) -> int | None:
-    right = len(seznam)
+    right = len(seznam) - 1
     left = 0 
     
-    while right - left > 1:
-        half = round((right-left)/2)
-        if seznam[left+half] > cislo:
-            right = half
-        elif seznam[left+half] < cislo:
-            left = half
+    while left <= right:
+        half = (left+right) // 2
+
+        if seznam[half] == cislo:
+            return half
+
+        if seznam[half] > cislo:
+            right = half -1
+
         else:
-            return left + half
+            left = half + 1
 
     return None
 
-print(binarni_deleni([1,4, 5, 14, 66, 77, 90], 14))
+
+start = time.perf_counter_ns()
+res = binarni_deleni([1,4, 5, 15, 66, 77, 90], 14)
+print('it took', time.perf_counter_ns() - start, 'nanoseconds')
+print("result: ", res)
 
