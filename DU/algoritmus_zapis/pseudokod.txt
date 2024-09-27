@@ -1,16 +1,15 @@
 def binarni_puleni(seznam, cislo):
-    pravy_palec = delka seznamu
+    pravy_palec = delka seznamu-1
     levy_palec = 0
 
-    dokud pravy_palec - levy_palec > 1:
-        když seznam[pravy_palec-levy_palec] > cislo
-            pravy_palec = pravy_palec-levy_palec
+    dokud  levy_palec <= pravy_palec:
+        
+        když se cislo mezi levým a pravým palcem rovná číslu tak:
+            return index tohoto cisla
 
-        jinak když seznam[pravy_palec-levy_palec] < cislo
-            levy_palec = pravy_palec-levy_palec
-
-        jinak 
-            vrat pravy_palec-levy_palec
-
+        jinak kdyz je cislo v "pulce" vetsi tak:
+            nastav pravy palec na o jedna mensi index nez cislo v pulce
+        jinak:
+            nastav levy palec na o jedna vetsi nez cislo v pulce
     vrat "seznam neobsahuje cislo"
 

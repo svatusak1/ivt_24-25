@@ -6,7 +6,7 @@ postup:
 
 Na začátek a na konec si nastavím dva "prstíčky"
 Najdu číslo mezi prstíčky, jestli se rovná hledanému čislu vrátím index,
-a pokud je větší než číslo, přesunu prstíček doleva od tohoto, 
+a pokud je větší než číslo, přesunu pravý prstíček doleva od tohoto, 
 jinak je číslo menší a posunu tedy levý prstíček doprava od čísla v "půlce".
 To opakuji, dokud se prstíčky neminou, tedy dokud ten pravý nebude vlevo od levého,
 v tom případě číslo v seznamu není
