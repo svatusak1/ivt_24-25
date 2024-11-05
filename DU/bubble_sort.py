@@ -12,6 +12,8 @@ def bubble_sort(seznam: list[int]) -> list[int]:
                 seznam[i], seznam[i+1] = seznam[i+1], seznam[i]
                 switched = True
             i += 1
+
+        len_seznam -= 1
     return seznam
 
 
