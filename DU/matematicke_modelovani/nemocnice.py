@@ -45,7 +45,7 @@ class Ordinace():
         self.specializace: OrdinacniSpecializace = specializace
         self.hlavni_lekar: Lekar = hlavni_lekar
         self.pomocni_lekari: list[Lekar] = pomocni_lekari
-        self.pacienti: Pacient = pacienti
+        self.pacienti: list[Pacient] = pacienti
 
     def prirad_hlavniho_lekare(self, lekar: Lekar) -> None:
         self.hlavni_lekar = lekar
@@ -82,6 +82,7 @@ if __name__ == "__main__":
     pacient2 = Pacient(215, "Ferdinand Krysanec", Pohlavi.JINE, Stavy.CO_TU_DELA)
 
     ord1 = Ordinace(OrdinacniSpecializace.ANESTEZIOLOGIE, lekar1, [lekar2], [pacient1, pacient2])
+    nemocnice.pridej_ordinace(ord1)
 
 
 
