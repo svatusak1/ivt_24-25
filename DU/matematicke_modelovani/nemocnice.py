@@ -1,17 +1,17 @@
 from dataclasses import dataclass
 from enum import Enum
 
-class DoktorskaSpecializace(Enum):
+class Specializace(Enum):
     KARDIOLOG = 0
     NEFROLOG = 1
     KINESTEZIOLOG = 2
     ANESTEZIOLOG = 3
-    CHIRURGIE = 4
+    CHIRURG = 4
 
 @dataclass
 class Lekar:
     jmeno: str
-    specializace: DoktorskaSpecializace
+    specializace: Specializace
 
 
 class Pohlavi(Enum):
@@ -33,16 +33,9 @@ class Pacient:
     stav: Stavy
 
 
-class OrdinacniSpecializace(Enum):
-    KARDIOLOGIE = 0
-    NEFROLOGIE = 1
-    KINESTEZIOLOGIE = 2
-    ANESTEZIOLOGIE = 3
-
-
 class Ordinace():
     def __init__(self, specializace: str, hlavni_lekar: Lekar, pomocni_lekari: list[Lekar], pacienti: list[Pacient]) -> None:
-        self.specializace: OrdinacniSpecializace = specializace
+        self.specializace: Specializace = specializace
         self.hlavni_lekar: Lekar = hlavni_lekar
         self.pomocni_lekari: list[Lekar] = pomocni_lekari
         self.pacienti: list[Pacient] = pacienti
@@ -76,12 +69,12 @@ class Nemocnice():
 
 if __name__ == "__main__":
     nemocnice = Nemocnice()
-    lekar1 = Lekar("Petr Kos", DoktorskaSpecializace.CHIRURGIE)
-    lekar2 = Lekar("Jarmila Jirankova", DoktorskaSpecializace.ANESTEZIOLOG)
+    lekar1 = Lekar("Petr Kos", Specializace.CHIRURG)
+    lekar2 = Lekar("Jarmila Jirankova", Specializace.ANESTEZIOLOG)
     pacient1 = Pacient(8007, "Chrobak Tom", Pohlavi.MUZ, Stavy.SPATNY)
     pacient2 = Pacient(215, "Ferdinand Krysanec", Pohlavi.JINE, Stavy.CO_TU_DELA)
 
-    ord1 = Ordinace(OrdinacniSpecializace.ANESTEZIOLOGIE, lekar1, [lekar2], [pacient1, pacient2])
+    ord1 = Ordinace(Specializace.ANESTEZIOLOG, lekar1, [lekar2], [pacient1, pacient2])
     nemocnice.pridej_ordinace(ord1)
 
 
